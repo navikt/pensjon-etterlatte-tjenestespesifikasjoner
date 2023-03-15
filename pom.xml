@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <description>Generated code + WSDL, WSD, JSON schemas etc. for describing how web services communicate in NAV.
     </description>
-    <url>https://github.com/navikt/tjenestespesifikasjoner</url>
+    <url>https://github.com/navikt/pensjon-etterlatte-tjenestespesifikasjoner</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cxf.version>3.2.11</cxf.version>
@@ -35,7 +35,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/navikt/tjenestespesifikasjoner</url>
+            <url>https://maven.pkg.github.com/navikt/pensjon-etterlatte-tjenestespesifikasjoner</url>
         </repository>
     </distributionManagement>
     <modules>
@@ -45,9 +45,9 @@
         <module>tilbakekreving-v1-tjenestespesifikasjon</module>
     </modules>
     <scm>
-        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
-        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
-        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
+        <developerConnection>scm:git:git@github.com:navikt/pensjon-etterlatte-tjenestespesifikasjoner.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/pensjon-etterlatte-tjenestespesifikasjoner.git</connection>
+        <url>https://github.com/navikt/pensjon-etterlatte-tjenestespesifikasjoner</url>
         <tag>HEAD</tag>
     </scm>
     <dependencyManagement>
