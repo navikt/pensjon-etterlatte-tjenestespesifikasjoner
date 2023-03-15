@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/navikt/pensjon-etterlatte-tjenestespesifikasjoner.svg)](https://jitpack.io/#navikt/pensjon-etterlatte-tjenestespesifikasjoner)
+
 # Tjenestespesifikasjoner
 
 Dette repoet  inneholder tjenestespesifikasjoner for de tjenestene som NAV tilbyr internt, og som vi bruker i Team Etterlatte.
@@ -9,16 +11,26 @@ kan bruke dem til å kommunisere med tjenestene.
 
 ### Gradle
 ```
+repositories {
+    maven { url 'https://jitpack.io' }
+}
 
 dependencies {
-    implementation 'no.nav.etterlatte.tjenestespesifikasjoner:navn-på-modul:Tag'
+    implementation 'com.github.navikt:pensjon-etterlatte-tjenestespesifikasjoner:navn-på-modul:Tag'
 }
 ```
 
 ### Maven
 ```	
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+	
 	<dependency>
-	    <groupId>no.nav.etterlatte.tjenestespesifikasjoner</groupId>
+	    <groupId>com.github.navikt.pensjon-etterlatte-tjenestespesifikasjoner</groupId>
 	    <artifactId>navn-på-modul</artifactId>
 	    <version>Tag</version>
 	</dependency>
