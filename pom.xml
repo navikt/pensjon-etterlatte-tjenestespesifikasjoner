@@ -6,21 +6,18 @@
     <version>0-SNAPSHOT</version>
     <name>tjenestespesifikasjoner</name>
     <packaging>pom</packaging>
-    <description>Generated code + WSDL, WSD, JSON schemas etc. for describing how web services communicate in NAV.</description>
+    <description>Generated code + WSDL, WSD, JSON schemas etc. for describing how web services communicate in NAV.
+    </description>
     <url>https://github.com/navikt/tjenestespesifikasjoner</url>
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cxf.version>3.2.11</cxf.version>
-        <cxf-xjc-boolean.version>3.1.0</cxf-xjc-boolean.version>
-        <org.jvnet.jaxb2.version>0.12.0</org.jvnet.jaxb2.version>
-        <net.java.dev.jaxb2.version>2.1.8</net.java.dev.jaxb2.version>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <jackson-annotations.version>2.9.0</jackson-annotations.version>
         <joda-time.version>2.10</joda-time.version>
-        <jaxb2-maven-plugin.version>1.5</jaxb2-maven-plugin.version>
-        <jaxb2-value-constructor.version>3.0</jaxb2-value-constructor.version>
-        <jaxb-fluent-api.version>2.1.8</jaxb-fluent-api.version>
+        <jakarta-xml-bind-runtime.version>4.0.2</jakarta-xml-bind-runtime.version>
     </properties>
     <licenses>
         <license>
@@ -30,7 +27,8 @@
     </licenses>
     <developers>
         <developer>
-            <organization>NAV (Arbeids- og velferdsdirektoratet) - The Norwegian Labour and Welfare Administration</organization>
+            <organization>NAV (Arbeids- og velferdsdirektoratet) - The Norwegian Labour and Welfare Administration
+            </organization>
             <organizationUrl>https://www.nav.no</organizationUrl>
         </developer>
     </developers>
@@ -65,19 +63,25 @@
                 <version>${joda-time.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.jvnet.jaxb2_commons</groupId>
-                <artifactId>jaxb2-basics</artifactId>
-                <version>${org.jvnet.jaxb2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jvnet.jaxb2_commons</groupId>
-                <artifactId>jaxb2-basics-runtime</artifactId>
-                <version>${org.jvnet.jaxb2.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
                 <version>${jackson-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-ri</artifactId>
+                <version>4.0.1</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-rt</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>${jakarta-xml-bind-runtime.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -98,87 +102,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>3.0.0-M1</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.jvnet.jax-ws-commons</groupId>
-                    <artifactId>jaxws-maven-plugin</artifactId>
-                    <version>2.3.1-b20150201.1248</version>
-                    <configuration>
-                        <vmArgs>
-                            <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                        </vmArgs>
-                        <encoding>utf-8</encoding>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>jaxb2-maven-plugin</artifactId>
-                    <version>${jaxb2-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>xjc</id>
-                            <goals>
-                                <goal>xjc</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <extension>true</extension>
-                        <arguments>-Xvalue-constructor -Xfluent-api</arguments>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.jvnet.jaxb2_commons</groupId>
-                            <artifactId>jaxb2-value-constructor</artifactId>
-                            <version>${jaxb2-value-constructor.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>net.java.dev.jaxb2-commons</groupId>
-                            <artifactId>jaxb-fluent-api</artifactId>
-                            <version>${jaxb-fluent-api.version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.cxf</groupId>
-                    <artifactId>cxf-codegen-plugin</artifactId>
-                    <version>${cxf.version}</version>
-                    <executions>
-                        <execution>
-                            <id>wsdl-to-java</id>
-                            <phase>generate-sources</phase>
-                            <goals>
-                                <goal>wsdl2java</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.java.dev.jaxb2-commons</groupId>
-                            <artifactId>jaxb-fluent-api</artifactId>
-                            <version>${jaxb-fluent-api.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.jvnet.jaxb2_commons</groupId>
-                            <artifactId>jaxb2-basics</artifactId>
-                            <version>${org.jvnet.jaxb2.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>no.nav.tjenestespesifikasjoner</groupId>
-                            <artifactId>jaxb-adapters</artifactId>
-                            <version>${project.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>joda-time</groupId>
-                            <artifactId>joda-time</artifactId>
-                            <version>${joda-time.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.apache.cxf.xjcplugins</groupId>
-                            <artifactId>cxf-xjc-boolean</artifactId>
-                            <version>${cxf-xjc-boolean.version}</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
 
             </plugins>
