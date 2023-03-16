@@ -54,3 +54,13 @@ Etter at en pull request er merget til main-branchen, vil
 CI automatisk gjøre en release av hele repoet til Maven Central.
 Alle modulene i dette repoet får samme versjonsnummer.
 Versjonsnummeret til releasen blir `1.YYYY.MM.DD-HH-MM-commithash`.
+
+
+# Henvendelser
+
+Spørsmål knyttet til koden eller prosjektet kan stilles som issues her på GitHub.
+
+## For NAV-ansatte
+
+Interne henvendelser kan sendes via Slack i kanalen #po-pensjon-team-etterlatte.
+
