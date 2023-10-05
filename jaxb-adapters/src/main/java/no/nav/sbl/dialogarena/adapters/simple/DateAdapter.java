@@ -13,8 +13,8 @@ public class DateAdapter {
             return new DateTime(v.substring(0, v.indexOf('Z')));
         } else if(v.contains("+")) {
             int idx = v.indexOf("+");
-            int hour = Integer.valueOf(v.substring(idx + 1, idx + 3));
-            int minute = Integer.valueOf(v.substring(idx + 4, idx + 6));
+            int hour = Integer.parseInt(v.substring(idx + 1, idx + 3));
+            int minute = Integer.parseInt(v.substring(idx + 4, idx + 6));
 
             return new DateTime(v.substring(0, v.indexOf('+')))
                     .withHourOfDay(hour)
