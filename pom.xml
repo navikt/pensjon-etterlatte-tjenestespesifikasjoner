@@ -16,7 +16,6 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <jackson-annotations.version>2.9.0</jackson-annotations.version>
-        <joda-time.version>2.10</joda-time.version>
         <jakarta-xml-bind-runtime.version>4.0.2</jakarta-xml-bind-runtime.version>
     </properties>
     <licenses>
@@ -51,11 +50,6 @@
     </scm>
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time</artifactId>
-                <version>${joda-time.version}</version>
-            </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
