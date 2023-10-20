@@ -40,7 +40,6 @@
     </distributionManagement>
     <modules>
         <module>avstemming-v1-tjenestespesifikasjon</module>
-        <module>jaxb-adapters</module>
         <module>nav-virksomhet-oppdragsbehandling-v1-meldingsdefinisjon</module>
         <module>tilbakekreving-v1-tjenestespesifikasjon</module>
     </modules>
@@ -52,11 +51,6 @@
     </scm>
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>no.nav.etterlatte.tjenestespesifikasjoner</groupId>
-                <artifactId>jaxb-adapters</artifactId>
-                <version>${project.version}</version>
-            </dependency>
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
