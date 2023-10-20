@@ -14,7 +14,6 @@
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <jackson-annotations.version>2.9.0</jackson-annotations.version>
         <jakarta-xml-bind-runtime.version>4.0.2</jakarta-xml-bind-runtime.version>
     </properties>
     <licenses>
@@ -49,11 +48,6 @@
     </scm>
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson-annotations.version}</version>
-            </dependency>
             <dependency>
                 <groupId>com.sun.xml.ws</groupId>
                 <artifactId>jaxws-ri</artifactId>
