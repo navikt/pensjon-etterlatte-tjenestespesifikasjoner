@@ -27,7 +27,6 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-xjc-plugin</artifactId>
-                <version>4.0.0</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.gitlab.virtual-machinist</groupId>

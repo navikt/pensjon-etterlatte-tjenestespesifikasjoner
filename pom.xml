@@ -11,12 +11,9 @@
     <url>https://github.com/navikt/pensjon-etterlatte-tjenestespesifikasjoner</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cxf.version>3.2.11</cxf.version>
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <jackson-annotations.version>2.9.0</jackson-annotations.version>
-        <joda-time.version>2.10</joda-time.version>
         <jakarta-xml-bind-runtime.version>4.0.2</jakarta-xml-bind-runtime.version>
     </properties>
     <licenses>
@@ -40,7 +37,6 @@
     </distributionManagement>
     <modules>
         <module>avstemming-v1-tjenestespesifikasjon</module>
-        <module>jaxb-adapters</module>
         <module>nav-virksomhet-oppdragsbehandling-v1-meldingsdefinisjon</module>
         <module>tilbakekreving-v1-tjenestespesifikasjon</module>
     </modules>
@@ -52,27 +48,6 @@
     </scm>
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>no.nav.etterlatte.tjenestespesifikasjoner</groupId>
-                <artifactId>jaxb-adapters</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time</artifactId>
-                <version>${joda-time.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson-annotations.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.xml.ws</groupId>
-                <artifactId>jaxws-ri</artifactId>
-                <version>4.0.1</version>
-                <type>pom</type>
-            </dependency>
             <dependency>
                 <groupId>com.sun.xml.ws</groupId>
                 <artifactId>jaxws-rt</artifactId>
@@ -94,16 +69,15 @@
                     <version>3.0.1</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.3.1</version>
+                    <groupId>com.sun.xml.ws</groupId>
+                    <artifactId>jaxws-maven-plugin</artifactId>
+                    <version>3.0.0</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-xjc-plugin</artifactId>
+                    <version>4.0.0</version>
                 </plugin>
-
             </plugins>
         </pluginManagement>
     </build>
