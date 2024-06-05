@@ -54,7 +54,7 @@
                             <goal>xsdtojava</goal>
                         </goals>
                         <configuration>
-                            <sourceRoot>${basedir}/src/main/java</sourceRoot>
+                            <sourceRoot>${basedir}/target/generated-sources</sourceRoot>
                             <xsdOptions>
                                 <xsdOption>
                                     <extension>true</extension>
