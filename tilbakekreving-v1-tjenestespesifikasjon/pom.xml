@@ -42,30 +42,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-xjc-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>xjc</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>xsdtojava</goal>
-                        </goals>
-                        <configuration>
-                            <sourceRoot>${basedir}/target/generated-sources</sourceRoot>
-                            <xsdOptions>
-                                <xsdOption>
-                                    <extension>true</extension>
-                                    <xsd>
-                                        ${basedir}/src/main/wsdl/no/nav/tilbakekreving/xsd/krav_og_vedtakstatus.xsd
-                                    </xsd>
-                                </xsdOption>
-                            </xsdOptions>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -77,11 +53,5 @@
             </resource>
         </resources>
     </build>
-    <scm>
-        <developerConnection>scm:git:git@github.com:navikt/pensjon-etterlatte-tjenestespesifikasjoner.git</developerConnection>
-        <connection>scm:git:git@github.com:navikt/pensjon-etterlatte-tjenestespesifikasjoner.git</connection>
-        <url>https://github.com/navikt/pensjon-etterlatte-tjenestespesifikasjoner</url>
-        <tag>HEAD</tag>
-    </scm>
     <name>${project.artifactId}</name>
 </project>

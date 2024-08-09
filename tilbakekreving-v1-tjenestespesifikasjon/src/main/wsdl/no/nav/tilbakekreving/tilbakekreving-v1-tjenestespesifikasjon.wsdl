@@ -8,6 +8,7 @@
             <xsd:import namespace="urn:no:nav:tilbakekreving:kravgrunnlag:hentliste:v1" schemaLocation="xsd/kravgrunnlag_liste.xsd"/>
             <xsd:import namespace="urn:no:nav:tilbakekreving:kravgrunnlag:detalj:v1" schemaLocation="xsd/kravgrunnlag_detalj.xsd"/>
             <xsd:import namespace="urn:no:nav:tilbakekreving:kravgrunnlag:annuller:v1" schemaLocation="xsd/kravgrunnlag_annuller.xsd"/>
+            <xsd:import namespace="urn:no:nav:tilbakekreving:status:v1" schemaLocation="xsd/krav_og_vedtakstatus.xsd"/>
 
             <xsd:element name="tilbakekrevingsvedtakRequest">
                 <xsd:complexType>

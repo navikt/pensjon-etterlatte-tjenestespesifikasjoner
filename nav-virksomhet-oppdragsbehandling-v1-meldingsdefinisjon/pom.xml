@@ -70,12 +70,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <scm>
-        <developerConnection>scm:git:git@github.com:navikt/pensjon-etterlatte-tjenestespesifikasjoner.git</developerConnection>
-        <connection>scm:git:git@github.com:navikt/pensjon-etterlatte-tjenestespesifikasjoner.git</connection>
-        <url>https://github.com/navikt/pensjon-etterlatte-tjenestespesifikasjoner</url>
-        <tag>HEAD</tag>
-    </scm>
     <name>${project.artifactId}</name>
 </project>
