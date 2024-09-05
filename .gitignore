@@ -9,3 +9,5 @@ bin
 */node_modules/
 rewrite
 travis/codesigning.asc
+buildSrc/build/*
+.gradle
