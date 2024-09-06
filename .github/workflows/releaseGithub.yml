@@ -8,7 +8,7 @@ on:
 jobs:
   release:
     name: Create Release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-8-cores
     permissions:
       contents: write
       packages: write
@@ -34,15 +34,19 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
-          cache: maven
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v4
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-encryption-key: ${{ secrets.gradlekey }}
+          dependency-graph: generate-and-submit
       - name: Deploy artifacts to github maven repository
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mvn -B versions:set -DnewVersion="$RELEASE_TAG"
-          mvn -B versions:commit
           echo "Running release"
-          mvn -B --settings maven-settings.xml deploy -Dmaven.wagon.http.pool=false
+          gradle -Pversion="$RELEASE_TAG" publish
 
       - name: Create Release
         id: create_release

@@ -40,7 +40,7 @@ dependencies {
 ## Bygging
 Koden bruker Jakarta-navnerommet, og forutsetter Java nyere enn 8.
 
-`mvn install`
+`gradle build`
 
 ## Gjøre endringer, release
 

@@ -3,7 +3,7 @@ name: CI
 on: push
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-8-cores
     steps:
     - uses: actions/checkout@v4
     - name: Set up Java
@@ -11,6 +11,14 @@ jobs:
       with:
         distribution: temurin
         java-version: 21
-        cache: maven
-    - name: Build with Maven
-      run: mvn -B install
+    - name: Inject slug/short variables
+      uses: rlespinasse/github-slug-action@v4
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        cache-encryption-key: ${{ secrets.gradlekey }}
+        dependency-graph: generate-and-submit
+    - name: Gradle test and build
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: ./gradlew :apps:${{ github.workflow }}:build --configuration-cache
