@@ -12,7 +12,6 @@ repositories {
 }
 
 group = "no.nav.etterlatte.tjenestespesifikasjoner"
-version = "0-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
 publishing {
