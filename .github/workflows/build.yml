@@ -22,3 +22,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: ./gradlew :apps:${{ github.workflow }}:build --configuration-cache
+
+
+permissions:
+  contents: write
+  id-token: write
