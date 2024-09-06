@@ -5,3 +5,4 @@ org-glassfish-jaxb-jaxb-runtime = "4.0.5"
 [libraries]
 com-sun-xml-ws-jaxws-rt = { module = "com.sun.xml.ws:jaxws-rt", version.ref = "com-sun-xml-ws-jaxws-rt" }
 org-glassfish-jaxb-jaxb-runtime = { module = "org.glassfish.jaxb:jaxb-runtime", version.ref = "org-glassfish-jaxb-jaxb-runtime" }
+any-annotate = { module = "com.gitlab.virtual-machinist:any-annotate", version = "2.1.0" }
