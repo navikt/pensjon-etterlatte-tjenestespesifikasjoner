@@ -20,14 +20,8 @@ dependencies {
 
 description = "nav-virksomhet-oppdragsbehandling-v1-meldingsdefinisjon"
 
-val createXjcOutputDir by tasks.register("createXjcOutputDir") {
-    doLast {
-        mkdir(xjcOutputDir)
-    }
-}
-
 val xjc by tasks.registering(JavaExec::class) {
-    dependsOn(createXjcOutputDir)
+    mkdir(xjcOutputDir)
     classpath = jaxb
     mainClass.set("com.sun.tools.xjc.XJCFacade")
     args = listOf(
