@@ -1,6 +1,6 @@
 plugins {
     id("tjenestespesifikasjoner")
-    id("com.sun.xml.ws.jaxws-maven-plugin") version "4.0.3"
+    id("com.github.bjornvester.wsdl2java") version "2.0.2"
 }
 
 dependencies {
@@ -8,3 +8,8 @@ dependencies {
 }
 
 description = "tilbakekreving-v1-tjenestespesifikasjon"
+
+wsdl2java {
+    wsdlDir.set(file("src/main/wsdl"))
+    useJakarta = true
+}
