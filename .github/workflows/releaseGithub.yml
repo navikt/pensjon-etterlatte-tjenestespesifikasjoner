@@ -9,7 +9,7 @@ on:
 jobs:
   release:
     name: Create Release
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       packages: write
