@@ -5,8 +5,6 @@ plugins {
 val jaxb: Configuration by configurations.creating
 
 val jaxbVersion = "4.0.2"
-val schemaDir = "src/main/xsd"
-val bindingDir = "src/main/xjb"
 val xjcOutputDir = "${layout.buildDirectory.get()}/generated/sources/xjc/main"
 
 
@@ -20,6 +18,9 @@ dependencies {
 
 description = "nav-virksomhet-oppdragsbehandling-v1-meldingsdefinisjon"
 
+/*
+Implementasjon henta frå https://stackoverflow.com/a/66775613 og tweaka vidare på
+ */
 val xjc by tasks.registering(JavaExec::class) {
     mkdir(xjcOutputDir)
     classpath = jaxb
@@ -28,14 +29,14 @@ val xjc by tasks.registering(JavaExec::class) {
         "-d",
         xjcOutputDir,
         "-b",
-        bindingDir,
+        "src/main/xjb",
         "-encoding",
         "UTF-8",
         "-no-header",
         "-quiet",
         "-Xany-annotate",
         "-extension",
-        schemaDir
+        "src/main/xsd"
     )
 }
 
