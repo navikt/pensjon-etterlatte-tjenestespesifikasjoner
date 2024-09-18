@@ -1,5 +1,8 @@
 [![](https://jitpack.io/v/navikt/pensjon-etterlatte-tjenestespesifikasjoner.svg)](https://jitpack.io/#navikt/pensjon-etterlatte-tjenestespesifikasjoner)
 
+
+# Dette repoet er arkivert. Koden er flytta over til [pensjon-etterlatte-felles](https://github.com/navikt/pensjon-etterlatte-felles)
+
 # Tjenestespesifikasjoner
 
 Dette repoet  inneholder tjenestespesifikasjoner for de tjenestene som NAV tilbyr internt, og som vi bruker i Team Etterlatte.
